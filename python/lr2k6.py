@@ -10,7 +10,8 @@ def lrverb_2_k6verb(lrverb):
     else:
         return verb
 
-
+def print_validator(validation_object):
+    return
 
 script_contents = json.load(lr_script)
 print('import http from \'k6/http\';')
@@ -26,5 +27,7 @@ for request in script_contents['requests']:
     if 'verb' in request:
         httpVerb=lrverb_2_k6verb(request['verb'])
     print('\tres=http.'+httpVerb+'('+httpRequestString+');')
+    if 'validation' in request:
+        print_validator(request['validation'])
     print('\tsleep(Math.random() * maxSleep)')
 print('}')
