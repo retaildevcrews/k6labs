@@ -4,7 +4,8 @@ import { sleep } from 'k6';
 import { check } from 'k6';
 
 export default function () {
-let maxSleep=5;
+
+    let maxSleep=5;
     let res
     let baseURL='https://ngsa-cosmos-westus3-dev.austinrdc.dev';
     

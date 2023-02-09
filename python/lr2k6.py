@@ -67,8 +67,7 @@ if __name__ == "__main__":
     with open(lr_json_path) as lr_script:
         script_contents = json.load(lr_script)
         print(
-            """
-import http from 'k6/http';
+"""import http from 'k6/http';
 import { sleep } from 'k6';
 import { check } from 'k6';
 
@@ -77,7 +76,8 @@ export default function () {"""
 
         print(
             
-    f"""let maxSleep={sleep_ms};
+    f"""
+    let maxSleep={sleep_ms};
     let res
     let baseURL='{base_url}';
     """
