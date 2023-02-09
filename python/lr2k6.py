@@ -1,6 +1,6 @@
 """Module providingFunction printing python version."""
-import json
 import argparse
+import json
 
 
 def get_args():
@@ -46,24 +46,26 @@ def validation_2_check(validation_object):
     contains_supported_validation=False
     validator="""    check(res, {
         """
+    #Convert individual lr validation to k6 check 
     for validation in validation_object:
         check_name=validation
         print(f"    //LR script contains validator: '{check_name}'")
         if check_name=='statusCode':
             contains_supported_validation=True
             validator=validator+f"""    "{check_name}":(r) => 
-            r.status === {validation_object['statusCode']},
+            r.status === {validation_object[check_name]},
                 """
         elif check_name=='jsonArray':
             contains_supported_validation=True
             validator=validator+f"""    "{check_name}":(r) => 
-            r.json().length === {validation_object['jsonArray']['count']},
+            r.json().length === {validation_object[check_name]['count']},
             """  
-        elif check_name=='jsonObject':
+        elif check_name=='contains':
             contains_supported_validation=True
-            validator=validator+f"""    "{check_name}":(r) => 
-            JSON.stringify(r.json()) === JSON.stringify({json.dumps(validation_object['jsonObject'])}),
-            """
+            for substring in validation_object[check_name]:
+                validator=validator+f"""    "{check_name}":(r) =>
+                r.body.includes('{substring}'),
+                """
 
     validator=validator+"""
             },
