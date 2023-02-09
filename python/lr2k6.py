@@ -60,19 +60,17 @@ def validation_2_check(validation_object):
             validator=validator+f"""    "{check_name}":(r) => 
             r.json().length === {validation_object[check_name]['count']},
             """  
-        elif check_name=='contains':
+        elif check_name=='contains' or check_name=='notContains':
             contains_supported_validation=True
+            negation_character=''
+            if check_name=='notContains':
+                negation_character='!'
+            counter=1
             for substring in validation_object[check_name]:
-                validator=validator+f"""    "{check_name}":(r) =>
-                r.body.includes('{substring}'),
+                validator=validator+f"""    "{check_name+str(counter)}":(r) =>
+                {negation_character}r.body.includes('{substring}'),
                 """
-        elif check_name=='notContains':
-            contains_supported_validation=True
-            for substring in validation_object[check_name]:
-                validator=validator+f"""    "{check_name}":(r) =>
-                NOT(r.body.includes('{substring}')),
-                """
-
+                counter+=1
     validator=validator+"""
             },
             {url: res.request.url}
