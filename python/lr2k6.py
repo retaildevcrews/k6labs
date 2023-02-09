@@ -1,6 +1,6 @@
 """Module providingFunction printing python version."""
-import json
 import argparse
+import json
 
 
 def get_args():
@@ -46,24 +46,31 @@ def validation_2_check(validation_object):
     contains_supported_validation=False
     validator="""    check(res, {
         """
+    #Convert individual lr validation to k6 check 
     for validation in validation_object:
         check_name=validation
         print(f"    //LR script contains validator: '{check_name}'")
         if check_name=='statusCode':
             contains_supported_validation=True
             validator=validator+f"""    "{check_name}":(r) => 
-            r.status === {validation_object['statusCode']},
+            r.status === {validation_object[check_name]},
                 """
         elif check_name=='jsonArray':
             contains_supported_validation=True
             validator=validator+f"""    "{check_name}":(r) => 
-            r.json().length === {validation_object['jsonArray']['count']},
+            r.json().length === {validation_object[check_name]['count']},
             """  
-        elif check_name=='jsonObject':
+        elif check_name=='contains' or check_name=='notContains':
             contains_supported_validation=True
-            validator=validator+f"""    "{check_name}":(r) => 
-            JSON.stringify(r.json()) === JSON.stringify({json.dumps(validation_object['jsonObject'])}),
-            """
+            negation_character=''
+            if check_name=='notContains':
+                negation_character='!'
+            counter=1
+            for substring in validation_object[check_name]:
+                validator=validator+f"""    "{check_name+str(counter)}":(r) =>
+                {negation_character}r.body.includes('{substring}'),
+                """
+                counter+=1
         elif check_name=='minLength':
             contains_supported_validation=True
             validator=validator+f"""    "{check_name}":(r) => r.body.length >= {validation_object['minLength']},
@@ -76,14 +83,13 @@ def validation_2_check(validation_object):
             contains_supported_validation=True
             validator=validator+f"""    "{check_name}":(r) => r.headers()['Content-Type'] === {validation_object['contentType']},
                 """
-
     validator=validator+"""
             },
             {url: res.request.url}
         );"""
     if contains_supported_validation:
         return validator
-    return "    //No supported validators existed for this request."
+    return "    //No supported validators exist for this request."
 
 if __name__ == "__main__":
     args=get_args()
