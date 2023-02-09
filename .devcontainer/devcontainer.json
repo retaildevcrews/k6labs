@@ -11,17 +11,22 @@
 		"ghcr.io/devcontainers/features/powershell:1": {
 			"version": "7.3"
 		}
-	  },
-	// Set container specific settings
-	"settings": {
-		"terminal.integrated.defaultProfile.linux": "zsh"
 	},
+	"customizations": {
+		"vscode": {
+			// Set container specific settings
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "zsh"
+			},
 
-	// Install extensions
-	"extensions": [
-		"ms-azuretools.vscode-docker",
-        "ms-azuretools.vscode-bicep"
-	],
+			// Install extensions
+			"extensions": [
+				"ms-azuretools.vscode-docker",
+				"ms-azuretools.vscode-bicep",
+				"ms-python.python"
+			],
+		}
+	},
 
     "onCreateCommand": "/bin/bash ./.devcontainer/on-create.sh"
 }
