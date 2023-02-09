@@ -81,7 +81,7 @@ def validation_2_check(validation_object):
                 """
         elif check_name=='contentType':
             contains_supported_validation=True
-            validator=validator+f"""    "{check_name}":(r) => r.headers()['Content-Type'] === {validation_object['contentType']},
+            validator=validator+f"""    "{check_name}":(r) => r.headers['Content-Type'] === '{validation_object['contentType']}',
                 """
     validator=validator+"""
             },
