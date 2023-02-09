@@ -66,6 +66,12 @@ def validation_2_check(validation_object):
                 validator=validator+f"""    "{check_name}":(r) =>
                 r.body.includes('{substring}'),
                 """
+        elif check_name=='notContains':
+            contains_supported_validation=True
+            for substring in validation_object[check_name]:
+                validator=validator+f"""    "{check_name}":(r) =>
+                NOT(r.body.includes('{substring}')),
+                """
 
     validator=validator+"""
             },
