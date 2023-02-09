@@ -3,7 +3,6 @@ import http from 'k6/http';
 import { sleep } from 'k6';
 import { check } from 'k6';
 
-
 export default function () {
 
     let maxSleep=5;
@@ -27,6 +26,12 @@ export default function () {
         
     sleep(Math.random() * maxSleep)
     res=http.get(baseURL+'/api/movies/zz0133093');
+
+    check(res, {
+        jsonObject:(r) =>
+        JSON.stringify(r.json()) === JSON.stringify([{"field": "votes", "value": 1546282}, {"field": "totalScore", "value": 13452653}, {"field": "id", "value": "zz0133093"}, {"field": "movieId", "value": "zz0133093"}, {"field": "title", "value": "The Matrix"}, {"field": "type", "value": "Movie-Dupe"}, {"field": "year", "value": 1999}, {"field": "partitionKey", "value": "3"}, {"field": "runtime", "value": 136}, {"field": "rating", "value": 8.7}, {"field": "textSearch", "value": "the matrix"}, {"field": "genres", "validation": {"jsonArray": {"count": 2, "byIndex": [{"index": 0, "value": "Action"}, {"index": 1, "value": "Sci-Fi"}]}}}, {"field": "roles", "validation": {"jsonArray": {"count": 7, "byIndex": [{"index": 0, "field": "actorId", "value": "nm0000206"}, {"index": 0, "field": "birthYear", "value": 1964}, {"index": 0, "field": "category", "value": "Actor"}, {"index": 0, "field": "name", "value": "Keanu Reeves"}, {"index": 0, "field": "order", "value": 1}, {"index": 0, "validation": {"notContains": ["\"deathYear\":"]}}, {"index": 0, "field": "characters", "validation": {"jsonArray": {"count": 1, "byIndex": [{"index": 0, "value": "Neo"}]}}}, {"index": 1, "field": "actorId", "value": "nm0000401"}, {"index": 1, "field": "birthYear", "value": 1961}, {"index": 1, "field": "category", "value": "Actor"}, {"index": 1, "field": "name", "value": "Laurence Fishburne"}, {"index": 1, "field": "order", "value": 2}, {"index": 1, "validation": {"notContains": ["\"deathYear\":"]}}, {"index": 1, "field": "characters", "validation": {"jsonArray": {"count": 1, "byIndex": [{"index": 0, "value": "Morpheus"}]}}}, {"index": 2, "field": "actorId", "value": "nm0005251"}, {"index": 2, "field": "birthYear", "value": 1967}, {"index": 2, "field": "category", "value": "Actress"}, {"index": 2, "field": "name", "value": "Carrie-Anne Moss"}, {"index": 2, "field": "order", "value": 3}, {"index": 2, "validation": {"notContains": ["\"deathYear\":"]}}, {"index": 2, "field": "characters", "validation": {"jsonArray": {"count": 1, "byIndex": [{"index": 0, "value": "Trinity"}]}}}, {"index": 3, "field": "actorId", "value": "nm0915989"}, {"index": 3, "field": "birthYear", "value": 1960}, {"index": 3, "field": "category", "value": "Actor"}, {"index": 3, "field": "name", "value": "Hugo Weaving"}, {"index": 3, "field": "order", "value": 4}, {"index": 3, "validation": {"notContains": ["\"deathYear\":"]}}, {"index": 3, "field": "characters", "validation": {"jsonArray": {"count": 1, "byIndex": [{"index": 0, "value": "Agent Smith"}]}}}, {"index": 4, "field": "actorId", "value": "nm0905154"}, {"index": 4, "field": "birthYear", "value": 1965}, {"index": 4, "field": "category", "value": "Director"}, {"index": 4, "field": "name", "value": "Lana Wachowski"}, {"index": 4, "field": "order", "value": 5}, {"index": 4, "validation": {"notContains": ["\"deathYear\":"]}}, {"index": 5, "field": "actorId", "value": "nm0905152"}, {"index": 5, "field": "birthYear", "value": 1967}, {"index": 5, "field": "category", "value": "Director"}, {"index": 5, "field": "name", "value": "Lilly Wachowski"}, {"index": 5, "field": "order", "value": 6}, {"index": 5, "validation": {"notContains": ["\"deathYear\":"]}}, {"index": 6, "field": "actorId", "value": "nm0005428"}, {"index": 6, "field": "birthYear", "value": 1952}, {"index": 6, "field": "category", "value": "Producer"}, {"index": 6, "field": "name", "value": "Joel Silver"}, {"index": 6, "field": "order", "value": 7}, {"index": 6, "validation": {"notContains": ["\"deathYear\":"]}}]}}}]),
+        });
+        
     sleep(Math.random() * maxSleep)
     res=http.put(baseURL+'/api/movies/zz0133093');
 
@@ -37,6 +42,12 @@ export default function () {
         
     sleep(Math.random() * maxSleep)
     res=http.get(baseURL+'/api/movies/zz0133093');
+
+    check(res, {
+        jsonObject:(r) =>
+        JSON.stringify(r.json()) === JSON.stringify([{"field": "votes", "value": 1546282}, {"field": "totalScore", "value": 13452653}, {"field": "id", "value": "zz0133093"}, {"field": "movieId", "value": "zz0133093"}, {"field": "title", "value": "The Matrix"}, {"field": "type", "value": "Movie-Dupe"}, {"field": "year", "value": 1999}, {"field": "partitionKey", "value": "3"}, {"field": "runtime", "value": 136}, {"field": "rating", "value": 8.7}, {"field": "textSearch", "value": "the matrix"}, {"field": "genres", "validation": {"jsonArray": {"count": 2, "byIndex": [{"index": 0, "value": "Action"}, {"index": 1, "value": "Sci-Fi"}]}}}, {"field": "roles", "validation": {"jsonArray": {"count": 7, "byIndex": [{"index": 0, "field": "actorId", "value": "nm0000206"}, {"index": 0, "field": "birthYear", "value": 1964}, {"index": 0, "field": "category", "value": "Actor"}, {"index": 0, "field": "name", "value": "Keanu Reeves"}, {"index": 0, "field": "order", "value": 1}, {"index": 0, "validation": {"notContains": ["\"deathYear\":"]}}, {"index": 0, "field": "characters", "validation": {"jsonArray": {"count": 1, "byIndex": [{"index": 0, "value": "Neo"}]}}}, {"index": 1, "field": "actorId", "value": "nm0000401"}, {"index": 1, "field": "birthYear", "value": 1961}, {"index": 1, "field": "category", "value": "Actor"}, {"index": 1, "field": "name", "value": "Laurence Fishburne"}, {"index": 1, "field": "order", "value": 2}, {"index": 1, "validation": {"notContains": ["\"deathYear\":"]}}, {"index": 1, "field": "characters", "validation": {"jsonArray": {"count": 1, "byIndex": [{"index": 0, "value": "Morpheus"}]}}}, {"index": 2, "field": "actorId", "value": "nm0005251"}, {"index": 2, "field": "birthYear", "value": 1967}, {"index": 2, "field": "category", "value": "Actress"}, {"index": 2, "field": "name", "value": "Carrie-Anne Moss"}, {"index": 2, "field": "order", "value": 3}, {"index": 2, "validation": {"notContains": ["\"deathYear\":"]}}, {"index": 2, "field": "characters", "validation": {"jsonArray": {"count": 1, "byIndex": [{"index": 0, "value": "Trinity"}]}}}, {"index": 3, "field": "actorId", "value": "nm0915989"}, {"index": 3, "field": "birthYear", "value": 1960}, {"index": 3, "field": "category", "value": "Actor"}, {"index": 3, "field": "name", "value": "Hugo Weaving"}, {"index": 3, "field": "order", "value": 4}, {"index": 3, "validation": {"notContains": ["\"deathYear\":"]}}, {"index": 3, "field": "characters", "validation": {"jsonArray": {"count": 1, "byIndex": [{"index": 0, "value": "Agent Smith"}]}}}, {"index": 4, "field": "actorId", "value": "nm0905154"}, {"index": 4, "field": "birthYear", "value": 1965}, {"index": 4, "field": "category", "value": "Director"}, {"index": 4, "field": "name", "value": "Lana Wachowski"}, {"index": 4, "field": "order", "value": 5}, {"index": 4, "validation": {"notContains": ["\"deathYear\":"]}}, {"index": 5, "field": "actorId", "value": "nm0905152"}, {"index": 5, "field": "birthYear", "value": 1967}, {"index": 5, "field": "category", "value": "Director"}, {"index": 5, "field": "name", "value": "Lilly Wachowski"}, {"index": 5, "field": "order", "value": 6}, {"index": 5, "validation": {"notContains": ["\"deathYear\":"]}}, {"index": 6, "field": "actorId", "value": "nm0005428"}, {"index": 6, "field": "birthYear", "value": 1952}, {"index": 6, "field": "category", "value": "Producer"}, {"index": 6, "field": "name", "value": "Joel Silver"}, {"index": 6, "field": "order", "value": 7}, {"index": 6, "validation": {"notContains": ["\"deathYear\":"]}}]}}}]),
+        });
+        
     sleep(Math.random() * maxSleep)
     res=http.get(baseURL+'/api/actors/nm0000284');
     sleep(Math.random() * maxSleep)
@@ -46,7 +57,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 49},
+        r.json().length === 49,
         });
         
     sleep(Math.random() * maxSleep)
@@ -58,7 +69,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -70,7 +81,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 18},
+        r.json().length === 18,
         });
         
     sleep(Math.random() * maxSleep)
@@ -82,7 +93,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -94,7 +105,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -106,7 +117,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -118,7 +129,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -130,7 +141,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -142,7 +153,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 32},
+        r.json().length === 32,
         });
         
     sleep(Math.random() * maxSleep)
@@ -154,7 +165,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -166,7 +177,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -178,7 +189,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -190,7 +201,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -202,7 +213,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -214,7 +225,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 30},
+        r.json().length === 30,
         });
         
     sleep(Math.random() * maxSleep)
@@ -226,7 +237,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -238,7 +249,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -250,7 +261,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -262,7 +273,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 21},
+        r.json().length === 21,
         });
         
     sleep(Math.random() * maxSleep)
@@ -274,7 +285,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -286,7 +297,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 28},
+        r.json().length === 28,
         });
         
     sleep(Math.random() * maxSleep)
@@ -298,7 +309,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -310,7 +321,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -322,7 +333,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -334,7 +345,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -346,7 +357,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -358,7 +369,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 37},
+        r.json().length === 37,
         });
         
     sleep(Math.random() * maxSleep)
@@ -370,7 +381,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -382,7 +393,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -394,7 +405,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -406,7 +417,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 39},
+        r.json().length === 39,
         });
         
     sleep(Math.random() * maxSleep)
@@ -418,7 +429,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -430,7 +441,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 37},
+        r.json().length === 37,
         });
         
     sleep(Math.random() * maxSleep)
@@ -442,7 +453,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -454,7 +465,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -466,7 +477,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -478,7 +489,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 87},
+        r.json().length === 87,
         });
         
     sleep(Math.random() * maxSleep)
@@ -490,7 +501,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -502,7 +513,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 37},
+        r.json().length === 37,
         });
         
     sleep(Math.random() * maxSleep)
@@ -514,7 +525,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -526,7 +537,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -538,7 +549,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -550,7 +561,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 37},
+        r.json().length === 37,
         });
         
     sleep(Math.random() * maxSleep)
@@ -562,7 +573,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -574,7 +585,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 39},
+        r.json().length === 39,
         });
         
     sleep(Math.random() * maxSleep)
@@ -586,7 +597,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -598,7 +609,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -610,7 +621,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -622,7 +633,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 56},
+        r.json().length === 56,
         });
         
     sleep(Math.random() * maxSleep)
@@ -634,7 +645,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -646,7 +657,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 47},
+        r.json().length === 47,
         });
         
     sleep(Math.random() * maxSleep)
@@ -658,7 +669,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -670,7 +681,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -682,7 +693,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -694,7 +705,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 25},
+        r.json().length === 25,
         });
         
     sleep(Math.random() * maxSleep)
@@ -706,7 +717,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -718,7 +729,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 48},
+        r.json().length === 48,
         });
         
     sleep(Math.random() * maxSleep)
@@ -730,7 +741,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -742,7 +753,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -754,7 +765,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -766,7 +777,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -778,7 +789,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -790,7 +801,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 53},
+        r.json().length === 53,
         });
         
     sleep(Math.random() * maxSleep)
@@ -802,7 +813,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -814,7 +825,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -826,7 +837,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -838,7 +849,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -850,7 +861,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -862,7 +873,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 60},
+        r.json().length === 60,
         });
         
     sleep(Math.random() * maxSleep)
@@ -874,7 +885,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -886,7 +897,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -898,7 +909,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -910,7 +921,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 91},
+        r.json().length === 91,
         });
         
     sleep(Math.random() * maxSleep)
@@ -922,7 +933,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -934,7 +945,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 56},
+        r.json().length === 56,
         });
         
     sleep(Math.random() * maxSleep)
@@ -946,7 +957,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -958,7 +969,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -970,7 +981,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -982,7 +993,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 38},
+        r.json().length === 38,
         });
         
     sleep(Math.random() * maxSleep)
@@ -994,7 +1005,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1006,7 +1017,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 56},
+        r.json().length === 56,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1018,7 +1029,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1030,7 +1041,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1042,7 +1053,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1054,7 +1065,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1066,7 +1077,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1078,7 +1089,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 51},
+        r.json().length === 51,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1090,7 +1101,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1102,7 +1113,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1114,7 +1125,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1126,7 +1137,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 26},
+        r.json().length === 26,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1138,7 +1149,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1150,7 +1161,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 49},
+        r.json().length === 49,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1162,7 +1173,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1174,7 +1185,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1186,7 +1197,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1198,7 +1209,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1210,7 +1221,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1222,7 +1233,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 51},
+        r.json().length === 51,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1234,7 +1245,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1246,7 +1257,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1258,7 +1269,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1270,7 +1281,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1282,7 +1293,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1294,7 +1305,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 44},
+        r.json().length === 44,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1306,7 +1317,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1318,7 +1329,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1330,7 +1341,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1342,7 +1353,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 49},
+        r.json().length === 49,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1354,7 +1365,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1366,7 +1377,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 46},
+        r.json().length === 46,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1378,7 +1389,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1390,7 +1401,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1402,7 +1413,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1414,7 +1425,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1426,7 +1437,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1438,7 +1449,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 49},
+        r.json().length === 49,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1450,7 +1461,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1462,7 +1473,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1474,7 +1485,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1486,7 +1497,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1498,7 +1509,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1510,7 +1521,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 52},
+        r.json().length === 52,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1522,7 +1533,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1534,7 +1545,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1546,7 +1557,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1558,7 +1569,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 21},
+        r.json().length === 21,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1570,7 +1581,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1582,7 +1593,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 61},
+        r.json().length === 61,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1594,7 +1605,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1606,7 +1617,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1618,7 +1629,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1630,7 +1641,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1642,7 +1653,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1654,7 +1665,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 43},
+        r.json().length === 43,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1666,7 +1677,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1678,7 +1689,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1690,7 +1701,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1702,7 +1713,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 39},
+        r.json().length === 39,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1714,7 +1725,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1726,7 +1737,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 51},
+        r.json().length === 51,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1738,7 +1749,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1750,7 +1761,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1762,7 +1773,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1774,7 +1785,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 87},
+        r.json().length === 87,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1786,7 +1797,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1798,7 +1809,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 53},
+        r.json().length === 53,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1810,7 +1821,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1822,7 +1833,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1834,7 +1845,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1846,7 +1857,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 37},
+        r.json().length === 37,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1858,7 +1869,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1870,7 +1881,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 48},
+        r.json().length === 48,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1882,7 +1893,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1894,7 +1905,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1906,7 +1917,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1918,7 +1929,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 56},
+        r.json().length === 56,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1930,7 +1941,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1942,7 +1953,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 50},
+        r.json().length === 50,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1954,7 +1965,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1966,7 +1977,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1978,7 +1989,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -1990,7 +2001,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 25},
+        r.json().length === 25,
         });
         
     sleep(Math.random() * maxSleep)
@@ -2002,7 +2013,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -2014,7 +2025,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 33},
+        r.json().length === 33,
         });
         
     sleep(Math.random() * maxSleep)
@@ -2026,7 +2037,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -2038,7 +2049,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -2050,7 +2061,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -2062,7 +2073,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -2074,7 +2085,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -2086,7 +2097,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 18},
+        r.json().length === 18,
         });
         
     sleep(Math.random() * maxSleep)
@@ -2098,7 +2109,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -2110,7 +2121,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -2122,7 +2133,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -2134,7 +2145,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -2146,7 +2157,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -2158,7 +2169,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 26},
+        r.json().length === 26,
         });
         
     sleep(Math.random() * maxSleep)
@@ -2170,7 +2181,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -2182,7 +2193,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -2194,7 +2205,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
@@ -2202,7 +2213,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 91},
+        r.json().length === 91,
         });
         
     sleep(Math.random() * maxSleep)
@@ -2210,7 +2221,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 100},
+        r.json().length === 100,
         });
         
     sleep(Math.random() * maxSleep)
@@ -2218,7 +2229,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 18},
+        r.json().length === 18,
         });
         
     sleep(Math.random() * maxSleep)
@@ -2226,7 +2237,7 @@ export default function () {
 
     check(res, {
         jsonArray:(r) =>
-        r.json().length === {'count': 10},
+        r.json().length === 10,
         });
         
     sleep(Math.random() * maxSleep)
