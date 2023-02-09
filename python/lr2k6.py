@@ -71,6 +71,18 @@ def validation_2_check(validation_object):
                 {negation_character}r.body.includes('{substring}'),
                 """
                 counter+=1
+        elif check_name=='minLength':
+            contains_supported_validation=True
+            validator=validator+f"""    "{check_name}":(r) => r.body.length >= {validation_object['minLength']},
+                """
+        elif check_name=='maxLength':
+            contains_supported_validation=True
+            validator=validator+f"""    "{check_name}":(r) => r.body.length <= {validation_object['maxLength']},
+                """
+        elif check_name=='contentType':
+            contains_supported_validation=True
+            validator=validator+f"""    "{check_name}":(r) => r.headers()['Content-Type'] === {validation_object['contentType']},
+                """
     validator=validator+"""
             },
             {url: res.request.url}
