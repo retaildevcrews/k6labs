@@ -64,6 +64,18 @@ def validation_2_check(validation_object):
             validator=validator+f"""    "{check_name}":(r) => 
             JSON.stringify(r.json()) === JSON.stringify({json.dumps(validation_object['jsonObject'])}),
             """
+        elif check_name=='minLength':
+            contains_supported_validation=True
+            validator=validator+f"""    "{check_name}":(r) => r.body.length >= {validation_object['minLength']},
+                """
+        elif check_name=='maxLength':
+            contains_supported_validation=True
+            validator=validator+f"""    "{check_name}":(r) => r.body.length <= {validation_object['maxLength']},
+                """
+        elif check_name=='contentType':
+            contains_supported_validation=True
+            validator=validator+f"""    "{check_name}":(r) => r.headers()['Content-Type'] === {validation_object['contentType']},
+                """
 
     validator=validator+"""
             },
