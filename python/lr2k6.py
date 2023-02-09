@@ -51,17 +51,24 @@ def validation_2_check(validation_object):
         print(f"    //LR script contains validator: '{check_name}'")
         if check_name=='statusCode':
             contains_supported_validation=True
-            validator=validator+f"""    "{check_name}":(r) => r.status === {validation_object['statusCode']},
+            validator=validator+f"""    "{check_name}":(r) => 
+            r.status === {validation_object['statusCode']},
                 """
         elif check_name=='jsonArray':
             contains_supported_validation=True
-            validator=validator+f"""    "{check_name}":(r) => r.json().length === {validation_object['jsonArray']['count']},
+            validator=validator+f"""    "{check_name}":(r) => 
+            r.json().length === {validation_object['jsonArray']['count']},
             """  
         elif check_name=='jsonObject':
             contains_supported_validation=True
-            validator=validator+f"""    "{check_name}":(r) => JSON.stringify(r.json()) === JSON.stringify({json.dumps(validation_object['jsonObject'])}),
+            validator=validator+f"""    "{check_name}":(r) => 
+            JSON.stringify(r.json()) === JSON.stringify({json.dumps(validation_object['jsonObject'])}),
             """
-    validator=validator+"""    });"""
+
+    validator=validator+"""
+            },
+            {url: res.request.url}
+        );"""
     if contains_supported_validation:
         return validator
     return "    //No supported validators existed for this request."
@@ -81,7 +88,7 @@ import { check } from 'k6';
 
 export default function () {"""
         )
-
+        # pylint: disable-msg=C0103
         print(
     f"""
     let maxSleep={sleep_ms};
@@ -89,14 +96,17 @@ export default function () {"""
     let baseURL='{base_url}';
     """
         )
+        request_count=1
         for request in script_contents["requests"]:
+            print(f"""    //Request #{request_count}""")
             httpRequestString = "baseURL+'" + request["path"] + "'"
-            HTTP_VERB = "get"
+            http_verb = "get"
             if "verb" in request:
-                HTTP_VERB = lrverb_2_k6verb(request["verb"])
-            print("    res=http." + HTTP_VERB + "(" + httpRequestString + ");")
+                http_verb = lrverb_2_k6verb(request["verb"])
+            print("    res=http." + http_verb + "(" + httpRequestString + ");")
             if "validation" in request:
                 print(validation_2_check(request["validation"]))
             print("    sleep(Math.random() * maxSleep)")
             print("")
+            request_count+=1
         print("}")
