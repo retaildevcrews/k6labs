@@ -9,10 +9,16 @@ def lrverb_2_k6verb(lrverb):
     else:
         return verb
 
-
 def print_validator(validation_object):
-    return
-
+    check_name=list(validation_object.keys())[0]
+    if 'statusCode' in validation_object:
+         print(
+            f"""
+    check(res, {{
+        {check_name}:(r) =>
+        r.status === {validation_object['statusCode']},
+        }});
+        """)
 
 if __name__ == "__main__":
     ## Argument Parse
