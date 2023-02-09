@@ -1,6 +1,33 @@
 import json
 import argparse
 
+def get_args():
+    ## Argument Parse
+    parser = argparse.ArgumentParser(
+        description="Convert LoadRunner script to k6 script"
+    )
+    parser.add_argument(
+        "-j",
+        "--lr-json-path",
+        default="../scripts/benchmark.json",
+        required=True,
+        help="Path to LoadRunner Json file",
+    )
+    parser.add_argument(
+        "-l",
+        "--sleep",
+        default=5,
+        required=False,
+        help="Sleep time in milliseconds",
+    )
+    parser.add_argument(
+        "-u",
+        "--base-url",
+        default="https://ngsa-cosmos-westus3-dev.austinrdc.dev",
+        required=False,
+        help="Base URL",
+    )
+    return parser.parse_args()
 
 def lrverb_2_k6verb(lrverb):
     verb = lrverb.lower()
@@ -31,33 +58,7 @@ def print_validator(validation_object):
         }});""")   
 
 if __name__ == "__main__":
-    ## Argument Parse
-    parser = argparse.ArgumentParser(
-        description="Convert LoadRunner script to k6 script"
-    )
-    parser.add_argument(
-        "-j",
-        "--lr-json-path",
-        default="../scripts/benchmark.json",
-        required=True,
-        help="Path to LoadRunner Json file",
-    )
-    parser.add_argument(
-        "-l",
-        "--sleep",
-        default=5,
-        required=False,
-        help="Sleep time in milliseconds",
-    )
-    parser.add_argument(
-        "-u",
-        "--base-url",
-        default="https://ngsa-cosmos-westus3-dev.austinrdc.dev",
-        required=False,
-        help="Base URL",
-    )
-    args = parser.parse_args()
-
+    args=get_args()
     lr_json_path = args.lr_json_path
     sleep_ms = args.sleep
     base_url = args.base_url
