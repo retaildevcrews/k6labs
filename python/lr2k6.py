@@ -13,25 +13,23 @@ def print_validator(validation_object):
     check_name=list(validation_object.keys())[0]
     if 'statusCode' in validation_object:
          print(
-            
     f"""    check(res, {{
         {check_name}:(r) =>
         r.status === {validation_object['statusCode']},
         }});""")
     elif 'jsonArray' in validation_object:
          print(
-            
     f"""    check(res, {{
         {check_name}:(r) =>
         r.json().length === {validation_object['jsonArray']['count']},
         }});""")   
     elif 'jsonObject' in validation_object:
          print(
-            
     f"""    check(res, {{
         {check_name}:(r) =>
         JSON.stringify(r.json()) === JSON.stringify({json.dumps(validation_object['jsonObject'])}),
         }});""")   
+
 if __name__ == "__main__":
     ## Argument Parse
     parser = argparse.ArgumentParser(
