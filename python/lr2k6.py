@@ -13,28 +13,25 @@ def print_validator(validation_object):
     check_name=list(validation_object.keys())[0]
     if 'statusCode' in validation_object:
          print(
-            f"""
-    check(res, {{
+            
+    f"""    check(res, {{
         {check_name}:(r) =>
         r.status === {validation_object['statusCode']},
-        }});
-        """)
+        }});""")
     elif 'jsonArray' in validation_object:
          print(
-            f"""
-    check(res, {{
+            
+    f"""    check(res, {{
         {check_name}:(r) =>
         r.json().length === {validation_object['jsonArray']['count']},
-        }});
-        """)   
+        }});""")   
     elif 'jsonObject' in validation_object:
          print(
-            f"""
-    check(res, {{
+            
+    f"""    check(res, {{
         {check_name}:(r) =>
         JSON.stringify(r.json()) === JSON.stringify({json.dumps(validation_object['jsonObject'])}),
-        }});
-        """)   
+        }});""")   
 if __name__ == "__main__":
     ## Argument Parse
     parser = argparse.ArgumentParser(
@@ -79,8 +76,8 @@ export default function () {"""
         )
 
         print(
-            f"""
-    let maxSleep={sleep_ms};
+            
+    f"""let maxSleep={sleep_ms};
     let res
     let baseURL='{base_url}';
     """
@@ -94,4 +91,5 @@ export default function () {"""
             if "validation" in request:
                 print_validator(request["validation"])
             print("    sleep(Math.random() * maxSleep)")
+            print("")
         print("}")
