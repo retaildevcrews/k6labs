@@ -77,7 +77,7 @@ def validation_2_check(validation_object):
         );"""
     if contains_supported_validation:
         return validator
-    return "    //No supported validators existed for this request."
+    return "    //No supported validators exist for this request."
 
 if __name__ == "__main__":
     args=get_args()
