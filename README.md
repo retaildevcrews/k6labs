@@ -10,18 +10,24 @@ Included in this repo is a tool for generating K6 scripts from existing LodeRunn
 To run:
 
 ```bash
-python python/lr2k6.py -j ./scripts/benchmark.json --sleep 300 > scripts/benchmark-new.js
+python python/lr2k6.py -j scripts/baseline.json --sleep 5 > scripts/baseline-k6.js
 
 # To see list of options
 python python/lr2k6.py --help
 ```
 
-## Running a K6 Test
+## Running a K6 Test locally
 
-A few examples of useful commands and/or tasks.
+For more in depth usage instruction see: <https://k6.io/docs/get-started/running-k6/>
 
-```
-$ First example
-$ Second example
-$ And keep this in mind
+``` bash
+# run a test with 1 user and 1 iteration
+k6 run --vus 1 --iterations 1 scripts/baseline-k6.js
+
+# run a test with 10 users for 5 minutes
+k6 run --vus 1 --duration 3m scripts/baseline-k6.js
+
+# to output time series data to a json file use the --out argument
+k6 run --vus 1 --iterations 1 scripts/baseline-k6.js \
+--out json=output-log.json
 ```
