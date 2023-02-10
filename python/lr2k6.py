@@ -40,59 +40,82 @@ def lrverb_2_k6verb(lrverb):
         return "del"
     return verb
 
+
 def validation_2_check(validation_object):
     """Generates check for k6 script from Loderunner Validation Object"""
-    check_name=list(validation_object.keys())[0]
-    contains_supported_validation=False
-    validator="""    check(res, {
+    check_name = list(validation_object.keys())[0]
+    contains_supported_validation = False
+    validator = """    check(res, {
         """
-    #Convert individual lr validation to k6 check 
+    # Convert individual lr validation to k6 check
     for validation in validation_object:
-        check_name=validation
+        check_name = validation
         print(f"    //LR script contains validator: '{check_name}'")
-        if check_name=='statusCode':
-            contains_supported_validation=True
-            validator=validator+f"""    "{check_name}":(r) => 
+        if check_name == "statusCode":
+            contains_supported_validation = True
+            validator = (
+                validator
+                + f"""    "{check_name}":(r) => 
             r.status === {validation_object[check_name]},
                 """
-        elif check_name=='jsonArray':
-            contains_supported_validation=True
-            validator=validator+f"""    "{check_name}":(r) => 
+            )
+        elif check_name == "jsonArray":
+            contains_supported_validation = True
+            validator = (
+                validator
+                + f"""    "{check_name}":(r) => 
             r.json().length === {validation_object[check_name]['count']},
-            """  
-        elif check_name=='contains' or check_name=='notContains':
-            contains_supported_validation=True
-            negation_character=''
-            if check_name=='notContains':
-                negation_character='!'
-            counter=1
+            """
+            )
+        elif check_name == "contains" or check_name == "notContains":
+            contains_supported_validation = True
+            negation_character = ""
+            if check_name == "notContains":
+                negation_character = "!"
+            counter = 1
             for substring in validation_object[check_name]:
-                validator=validator+f"""    "{check_name+str(counter)}":(r) =>
+                validator = (
+                    validator
+                    + f"""    "{check_name+str(counter)}":(r) =>
                 {negation_character}r.body.includes('{substring}'),
                 """
-                counter+=1
-        elif check_name=='minLength':
-            contains_supported_validation=True
-            validator=validator+f"""    "{check_name}":(r) => r.body.length >= {validation_object['minLength']},
+                )
+                counter += 1
+        elif check_name == "minLength":
+            contains_supported_validation = True
+            validator = (
+                validator
+                + f"""    "{check_name}":(r) => r.body.length >= {validation_object['minLength']},
                 """
-        elif check_name=='maxLength':
-            contains_supported_validation=True
-            validator=validator+f"""    "{check_name}":(r) => r.body.length <= {validation_object['maxLength']},
+            )
+        elif check_name == "maxLength":
+            contains_supported_validation = True
+            validator = (
+                validator
+                + f"""    "{check_name}":(r) => r.body.length <= {validation_object['maxLength']},
                 """
-        elif check_name=='contentType':
-            contains_supported_validation=True
-            validator=validator+f"""    "{check_name}":(r) => r.headers['Content-Type'] === '{validation_object['contentType']}',
+            )
+        elif check_name == "contentType":
+            contains_supported_validation = True
+            validator = (
+                validator
+                + f"""    "{check_name}":(r) => r.headers['Content-Type'] === '{validation_object['contentType']}',
                 """
-    validator=validator+"""
+            )
+    validator = (
+        validator
+        + """
             },
             {url: res.request.url}
         );"""
+    )
     if contains_supported_validation:
         return validator
     return "    //No supported validators exist for this request."
 
+
 if __name__ == "__main__":
-    args=get_args()
+    args = get_args()
     lr_json_path = args.lr_json_path
     sleep_ms = args.sleep
     base_url = args.base_url
@@ -100,7 +123,7 @@ if __name__ == "__main__":
     with open(lr_json_path, encoding="utf8") as lr_script:
         script_contents = json.load(lr_script)
         print(
-"""import http from 'k6/http';
+            """import http from 'k6/http';
 import { sleep } from 'k6';
 import { check } from 'k6';
 
@@ -108,13 +131,13 @@ export default function () {"""
         )
         # pylint: disable-msg=C0103
         print(
-    f"""
+            f"""
     let maxSleep={sleep_ms};
     let res
     let baseURL='{base_url}';
     """
         )
-        request_count=1
+        request_count = 1
         for request in script_contents["requests"]:
             print(f"""    //Request #{request_count}""")
             httpRequestString = "baseURL+'" + request["path"] + "'"
@@ -126,5 +149,5 @@ export default function () {"""
                 print(validation_2_check(request["validation"]))
             print("    sleep(Math.random() * maxSleep)")
             print("")
-            request_count+=1
+            request_count += 1
         print("}")
