@@ -26,7 +26,7 @@ def get_args():
     parser.add_argument(
         "-u",
         "--base-url",
-        default="https://ngsa-cosmos-westus3-dev.austinrdc.dev",
+        default="https://ngsa-cosmos-eastus-dev.austinrdc.dev",
         required=False,
         help="Base URL",
     )
@@ -99,7 +99,7 @@ def validation_2_check(validation_object):
             contains_supported_validation = True
             validator = (
                 validator
-                + f"""    "{check_name}":(r) => r.headers['Content-Type'] === '{validation_object['contentType']}',
+                + f"""    "{check_name}":(r) => r.headers['Content-Type'].startsWith('{validation_object['contentType']}'),
                 """
             )
     validator = (
