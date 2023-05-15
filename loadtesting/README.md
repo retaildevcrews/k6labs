@@ -136,6 +136,7 @@ Now let's take a look at an example of an summary report.
 ## Deploying Local Cluster and ngsa-memory
 
 ```bash
+# make sure you still in `loadtesting` directory
 # create cluster, and build/deploy application
 make all
 
