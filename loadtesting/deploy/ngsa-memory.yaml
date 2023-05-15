@@ -18,7 +18,6 @@ spec:
     spec:
       containers:
         - name: app
-          # image: k3d-registry.localhost:5000/ngsa-app:local
           image: ghcr.io/retaildevcrews/ngsa-app:beta
           imagePullPolicy: Always
           args:
