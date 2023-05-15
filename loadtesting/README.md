@@ -60,10 +60,8 @@ More information about Checks can be found [here](https://k6.io/docs/using-k6/ch
 
 Let's identify each load test file utilized for this lab.
 
-- `baseline-k6-local.js`, provides a baseline load test for local deployment `http://localhost:8080`
-- `benchmark-k6-local.js`, provides a benchmark load test for local deployment `http://localhost:8080`
-- `benchmark-k6-cluster.js`, provides a benchmark load test for cluster deployment `http://ngsa-memory.ngsa.svc.cluster.local:8080`
-
+- `baseline-k6.js`, provides a baseline load test.
+- `benchmark-k6-cluster.js`, provides a benchmark load test for cluster deployment.
 
 Now let's take a closer look at the load test file utilized for this example, and review its contents with special attention to VU code stage and different type of Checks.
 
@@ -93,12 +91,6 @@ For example, we are going to run a 5-second, 2-VU load test. In order to do that
 - Run the load test script by supplying VU and duration values as arguments, this will ovewrite the values under Option if any.
 
 More information about running k6 can be found [here](https://k6.io/docs/get-started/running-k6/)
-
-# TODO:  use env variable to pass in host [Env Variables](https://k6.io/docs/using-k6/environment-variables/)
-
-```bash
-- Add env variable to k6 deployment
-```
 
 Switch to `loadtesting` directory
 
