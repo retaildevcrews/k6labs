@@ -11,6 +11,10 @@ echo "deb https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k
 sudo apt-get update --fix-missing -y
 sudo apt-get install k6 --no-install-recommends
 
+# Install Pythom
+sudo apt-get update
+sudo apt-get --assume-yes install python3.10
+
 # Install Black formatter
 status "  installing black formatter"
 python -m pip install -U black

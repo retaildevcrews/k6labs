@@ -10,10 +10,10 @@ Included in this repo is a tool for generating K6 scripts from existing LodeRunn
 To run:
 
 ```bash
-python python/lr2k6.py -j scripts/baseline.json --sleep 5 > scripts/baseline-k6.js
+python3 python/lr2k6.py -j scripts/baseline.json --sleep 5 > scripts/baseline-k6.js
 
 # To see list of options
-python python/lr2k6.py --help
+python3 python/lr2k6.py --help
 ```
 
 ## Running a K6 Test locally
