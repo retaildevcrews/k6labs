@@ -1,5 +1,6 @@
 {
 	"name": "k6labs",
+	"dockerFile": "Dockerfile",
 	"runArgs": [ "--init", "--privileged" ],
 	"overrideCommand": false,
 	"features": {
@@ -19,26 +20,6 @@
 				"terminal.integrated.defaultProfile.linux": "zsh"
 			},
 
-			"hostRequirements": {
-				"cpus": 4
-			},
-		
-		  // Forwarded ports
-			"forwardPorts": [
-				8080,
-				30000,
-				30080
-			],
-			// Port Labels
-			"portsAttributes": {
-				"30000": { "label": "Istio IngressGateway LoadBalancer NodePort" },
-				"30080": { "label": "Ngsa NodePort" }
-			},
-
-			// Added for local developement
-  			// Without this port forwarding to Windows Network sometime fails
-  			"appPort": [8080],
-
 			// Install extensions
 			"extensions": [
 				"ms-azuretools.vscode-docker",
@@ -52,6 +33,25 @@
 			]
 		}
 	},
+	"hostRequirements": {
+		"cpus": 4
+	},
+
+  // Forwarded ports
+	"forwardPorts": [
+		8080,
+		30000,
+		30080
+	],
+	// Port Labels
+	"portsAttributes": {
+		"30000": { "label": "Istio IngressGateway LoadBalancer NodePort" },
+		"30080": { "label": "Ngsa NodePort" }
+	},
+
+	// Added for local developement
+	  // Without this port forwarding to Windows Network sometime fails
+	  "appPort": [8080],
 
     "onCreateCommand": "/bin/bash ./.devcontainer/on-create.sh"
 }
