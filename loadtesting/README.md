@@ -161,10 +161,10 @@ The k6 deployment is configured to run 10 VU for 30 seconds
 kubectl create namespace k6
 
 # create configmap from load test file
-kubectl create configmap k6-config --namespace k6 --from-file=k6/benchmark-k6-cluster.js
+kubectl create configmap k6-config --namespace k6 --from-file=scripts/benchmark-k6-cluster.js
 
 # deploy k6 image to local cluster
-kubectl apply -f k6/k6.yaml
+kubectl apply -f deploy/k6.yaml
 ```
 
 ## Verify k6 is up and running
@@ -196,23 +196,31 @@ The k6 has an experimental feature name [Prometheus remote write](https://k6.io/
 
 ![Prometheus remote write configuration](/loadtesting/images/k6-prometheus-remote-write.png)
 
-NOTE: The [k6 deployment file](/k6/k6.yaml) has already set this configuration.
+NOTE: The [k6 deployment file](/loadtesting/deploy/k6.yaml) has already set this configuration.
 
 ### Install Grafana and Prometheus
 
 ```bash
 
 #  deploy prometheus and grafana
-kubectl apply -f k6/deploy/monitoring
+kubectl apply -f deploy/monitoring
 
-kubectl port-forward service/grafana 3000:3000 -n monitoring
+# Very that prometheus and grafana pods are up an running
+kubectl get pods -n monitoring
 
-kubectl port-forward service/prometheus-service 8080:9090 -n monitoring
 ```
 
 ### Open grafana dashboard
 
 - Open solution in VS code desktop
+
+```bash
+#Enable port-forward
+kubectl port-forward service/grafana 3000:3000 -n monitoring
+
+kubectl port-forward service/prometheus-service 9090:8080 -n monitoring
+```
+
 - Then, for grafana open browser on  http://127.0.0.1:3000 or http://localhost:3000/
 
 To [visualize time series](https://k6.io/docs/results-output/real-time/prometheus-remote-write/#time-series-visualization), you can use Grafana via explorer, importing the pre-built [official dashboard](https://grafana.com/grafana/dashboards/18030-test-result/)
