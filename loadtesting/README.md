@@ -223,7 +223,8 @@ kubectl port-forward service/prometheus-service 9090:8080 -n monitoring
 
 - Then, for grafana open browser on  http://127.0.0.1:3000 or http://localhost:3000/
 
-To [visualize time series](https://k6.io/docs/results-output/real-time/prometheus-remote-write/#time-series-visualization), you can use Grafana via explorer, importing the pre-built [official dashboard](https://grafana.com/grafana/dashboards/18030-test-result/)
+To [visualize time series](https://k6.io/docs/results-output/real-time/prometheus-remote-write/#time-series-visualization), you can use Grafana via explorer by importing the pre-built [official dashboard](https://grafana.com/grafana/dashboards/18030-test-result/)
+or [k6 Load Testing Results (Prometheus)](https://grafana.com/grafana/dashboards/16543-k6-load-testing-results-prometheus/) dashboard
 ### Tooling, install a jumpbox to test connectivity
 
 ```bash
