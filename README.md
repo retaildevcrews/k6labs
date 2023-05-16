@@ -38,7 +38,7 @@ More information related to the topics listed above can be found here.
 
 - [Test Lifecycle Stages](https://k6.io/docs/using-k6/test-lifecycle/)
 - [Options](https://k6.io/docs/using-k6/k6-options/)
-- [Exemples](https://k6.io/docs/examples/)
+- [Examples](https://k6.io/docs/examples/)
 
 Typically, VU code is inside the `default` function, VU code runs over and over through the test duration from start to end in sequence. Once the VU reaches the end of the function, it loops back to the start and executes the code all over.
 
@@ -148,13 +148,13 @@ kubectl logs <ngsa-memory pod name> -n ngsa --tail 10
 
 ## Deploy k6 from docker image
 
-We are deploying the [k6 docker image](https://hub.docker.com/r/loadimpact/k6), however k6 package can be installed on multiple operating systems such as Linux, Mac, and Windows. [k6 Installation options](https://k6.io/docs/get-started/installation/).
+We are deploying the [k6 docker image](https://hub.docker.com/r/grafana/k6/), however k6 package can be installed on multiple operating systems such as Linux, Mac, and Windows. [k6 Installation options](https://k6.io/docs/get-started/installation/).
 
 Also, we are storing the load test script into a Configmap so it can accessable when k6 scales up.
 
 ## How to run a test
 
-The k6 deployment is configured to run 10 VU for 30 seconds
+The k6 deployment is configured to run 10 VU for 30 minutes
 
 ```bash
 # create name space
@@ -212,7 +212,7 @@ kubectl get pods -n monitoring
 
 ### Open grafana dashboard
 
-- Open solution in VS code desktop
+- Open Codespaces in VS code desktop
 - Enable port-forward from CLI or K9s
 
 ```bash
@@ -221,7 +221,8 @@ kubectl port-forward service/grafana 3000:3000 -n monitoring
 kubectl port-forward service/prometheus-service 9090:8080 -n monitoring
 ```
 
-- Then, for grafana open browser on  http://127.0.0.1:3000 or http://localhost:3000/
+- Then, for grafana open browser on  http://localhost:3000 
+- Then for prometheus open browser on http://localhost:9090
 
 To [visualize time series](https://k6.io/docs/results-output/real-time/prometheus-remote-write/#time-series-visualization), you can use Grafana via explorer by importing the pre-built [official dashboard](https://grafana.com/grafana/dashboards/18030-test-result/)
 or [k6 Load Testing Results (Prometheus)](https://grafana.com/grafana/dashboards/16543-k6-load-testing-results-prometheus/) dashboard
