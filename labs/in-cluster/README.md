@@ -29,7 +29,7 @@ code scripts/benchmark-k6-cluster.js
 
 ```bash
 # NOTE: make sure you still in `labs/in-cluster/` directory
-# create cluster, and build/deploy application, the make file used for this 
+# create cluster, and build/deploy application, the make file used here creates a k3d cluster and deploys ngsa and istio to that cluster
 make all
 
 # check if cluster and application is deployed
@@ -40,7 +40,7 @@ make check
 
 ```bash
 
-kubectl get pods -n ngsa
+kubectl wait pods -n ngsa --all --for condition=ready --timeout=180s
 
 # check ngsa logs
 kubectl logs <ngsa-memory pod name> -n ngsa --tail 10
@@ -83,11 +83,17 @@ kubectl wait pods -n monitoring --all --for condition=ready --timeout=180s
     kubectl port-forward service/grafana 3000:3000 -n monitoring
     ```
 
-- Access Grafana from browser at  <http://localhost:3000>
-- Access Prometheus from browser at <http://localhost:9090>
+- Access Grafana from browser at  <http://localhost:3000> - *you can log into your local instance of grafana by using the creds admin/admin*
 
-To [visualize time series](https://k6.io/docs/results-output/real-time/prometheus-remote-write/#time-series-visualization), you can use Grafana via explorer by importing the pre-built [official dashboard](https://grafana.com/grafana/dashboards/18030-test-result/)
-or [k6 Load Testing Results (Prometheus)](https://grafana.com/grafana/dashboards/16543-k6-load-testing-results-prometheus/) dashboard
+- Import Official k6 Test Result Dashboard:
+    1. Navigate to: <http://localhost:3000/dashboard/import>
+    2. In the id field enter the following id: 18030 and click load button
+    3. Select Prometheus from the prometheus dropdown and click import button
+
+- Import k6 Load Testing Results  Dashboard:
+    1. Navigate to: <http://localhost:3000/dashboard/import>
+    2. In the id field enter the following id: 16543 and click load button
+    3. Select Prometheus from the prometheus dropdown and click import button
 
 ## Deploy k6 from docker image
 
@@ -103,18 +109,19 @@ The k6 deployment is configured to run 10 VU for 30 minutes
 # create name space
 kubectl create namespace k6
 
-# create configmap from load test file
+# create configmap from load test file - this is used to execute test in kubernetes environment, container loads test script from this configmap
 kubectl create configmap k6-config --namespace k6 --from-file=scripts/benchmark-k6-cluster.js
 
 # deploy k6 image to local cluster
 kubectl apply -f deploy/k6.yaml
+
 ```
 
 ## Verify k6 is up and running
 
 ```bash
 
-kubectl get pods -n k6
+kubectl wait pods -n k6 --all --for condition=ready --timeout=180s
 
 # check k6 logs
 kubectl logs <k6 pod name> -n k6 --tail 20
