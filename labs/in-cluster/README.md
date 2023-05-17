@@ -1,4 +1,4 @@
-# Run K6 Tests Within A Cluster 
+# Run K6 Tests Within A Cluster
 
 ## Goal
 
@@ -121,9 +121,8 @@ kubectl port-forward service/grafana 3000:3000 -n monitoring
 kubectl port-forward service/prometheus-service 9090:8080 -n monitoring
 ```
 
-- Then, for grafana open browser on  http://localhost:3000 
-- Then for prometheus open browser on http://localhost:9090
+- Then, for grafana open browser on  <http://localhost:3000>
+- Then for prometheus open browser on <http://localhost:9090>
 
 To [visualize time series](https://k6.io/docs/results-output/real-time/prometheus-remote-write/#time-series-visualization), you can use Grafana via explorer by importing the pre-built [official dashboard](https://grafana.com/grafana/dashboards/18030-test-result/)
 or [k6 Load Testing Results (Prometheus)](https://grafana.com/grafana/dashboards/16543-k6-load-testing-results-prometheus/) dashboard
-
