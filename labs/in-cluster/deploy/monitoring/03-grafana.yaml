@@ -15,7 +15,8 @@ data:
                 "orgId": 1,
                 "type": "prometheus",
                 "url": "http://prometheus-service.monitoring.svc:8080",
-                "version": 1
+                "version": 1,
+                "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             }
         ]
     }

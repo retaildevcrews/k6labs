@@ -46,7 +46,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "0XhLkoY4z"
+          "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
         },
         "fieldConfig": {
           "defaults": {
@@ -122,7 +122,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "builder",
             "exemplar": false,
@@ -142,7 +142,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "0XhLkoY4z"
+          "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
         },
         "fieldConfig": {
           "defaults": {
@@ -218,7 +218,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "builder",
             "exemplar": false,
@@ -238,7 +238,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "0XhLkoY4z"
+          "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
         },
         "fieldConfig": {
           "defaults": {
@@ -317,7 +317,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -337,7 +337,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "0XhLkoY4z"
+          "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
         },
         "fieldConfig": {
           "defaults": {
@@ -416,7 +416,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "builder",
             "exemplar": false,
@@ -437,7 +437,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "0XhLkoY4z"
+          "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
         },
         "fieldConfig": {
           "defaults": {
@@ -515,7 +515,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "builder",
             "exemplar": false,
@@ -535,7 +535,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "0XhLkoY4z"
+          "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
         },
         "fieldConfig": {
           "defaults": {
@@ -613,7 +613,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "builder",
             "exemplar": false,
@@ -633,7 +633,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "0XhLkoY4z"
+          "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
         },
         "description": "",
         "fieldConfig": {
@@ -913,7 +913,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "builder",
             "exemplar": false,
@@ -928,7 +928,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "exemplar": true,
@@ -944,7 +944,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -958,7 +958,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -974,7 +974,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "0XhLkoY4z"
+          "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
         },
         "fieldConfig": {
           "defaults": {
@@ -1052,7 +1052,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "builder",
             "exemplar": false,
@@ -1072,7 +1072,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "0XhLkoY4z"
+          "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
         },
         "fieldConfig": {
           "defaults": {
@@ -1176,7 +1176,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "exemplar": true,
@@ -1189,7 +1189,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "exemplar": true,
@@ -1207,7 +1207,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "0XhLkoY4z"
+          "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
         },
         "fieldConfig": {
           "defaults": {
@@ -1333,7 +1333,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -1388,7 +1388,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "0XhLkoY4z"
+          "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
         },
         "fieldConfig": {
           "defaults": {
@@ -1448,7 +1448,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "builder",
             "exemplar": false,
@@ -1468,7 +1468,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "0XhLkoY4z"
+          "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
         },
         "fieldConfig": {
           "defaults": {
@@ -1578,7 +1578,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "builder",
             "exemplar": false,
@@ -1696,7 +1696,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "0XhLkoY4z"
+          "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
         },
         "fieldConfig": {
           "defaults": {
@@ -1898,7 +1898,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "refId": "A"
           }
@@ -1909,7 +1909,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "0XhLkoY4z"
+          "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
         },
         "fieldConfig": {
           "defaults": {
@@ -2458,7 +2458,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -2474,7 +2474,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "expr": "histogram_quantile(0, sum by(name) (rate(k6_http_req_duration_seconds{testid=~\"$testid\"}[$__rate_interval])))",
@@ -2487,7 +2487,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "expr": "histogram_quantile(0.5, sum by(name) (rate(k6_http_req_duration_seconds{testid=~\"$testid\"}[$__rate_interval])))",
@@ -2500,7 +2500,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "expr": "histogram_quantile(0.95, sum by(name) (rate(k6_http_req_duration_seconds{testid=~\"$testid\"}[$__rate_interval])))",
@@ -2513,7 +2513,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "expr": "histogram_quantile(1, sum by(name) (rate(k6_http_req_duration_seconds{testid=~\"$testid\"}[$__rate_interval])))",
@@ -2650,7 +2650,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "0XhLkoY4z"
+          "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
         },
         "fieldConfig": {
           "defaults": {
@@ -2734,7 +2734,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "exemplar": true,
@@ -2748,7 +2748,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "exemplar": true,
@@ -2762,7 +2762,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "exemplar": true,
@@ -2776,7 +2776,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "exemplar": true,
@@ -2790,7 +2790,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "exemplar": true,
@@ -2804,7 +2804,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "exemplar": true,
@@ -2818,7 +2818,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "exemplar": true,
@@ -2845,7 +2845,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "0XhLkoY4z"
+          "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
         },
         "fieldConfig": {
           "defaults": {
@@ -2966,7 +2966,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "expr": "histogram_quantile(0.95, sum by(testid)(rate(k6_http_req_duration_seconds{scenario=~\"$scenario\", expected_response=\"true\", testid=~\"$testid\"}[$__rate_interval])))",
@@ -2979,7 +2979,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "expr": "sum by(scenario) (max(k6_http_reqs_total{testid=~\"$testid\", scenario=~\"$scenario\"}))",
@@ -2992,7 +2992,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "expr": "avg by(scenario) (sum(irate(k6_http_reqs_total{testid=~\"$testid\"}[$__rate_interval])))",
@@ -3005,7 +3005,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "expr": "sum by(scenario) (k6_iterations_total{testid=~\"$testid\",scenario=~\"$scenario\"})",
@@ -3018,7 +3018,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "editorMode": "code",
             "expr": "sum by(scenario) ( k6_http_reqs_total{testid=~\"$testid\",scenario=~\"$scenario\",expected_response=\"false\"})\n",
@@ -3144,7 +3144,7 @@
       {
         "collapsed": true,
         "datasource": {
-          "uid": "0XhLkoY4z"
+          "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
         },
         "gridPos": {
           "h": 1,
@@ -3157,7 +3157,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "fieldConfig": {
               "defaults": {
@@ -3268,7 +3268,7 @@
               {
                 "datasource": {
                   "type": "prometheus",
-                  "uid": "0XhLkoY4z"
+                  "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
                 },
                 "editorMode": "code",
                 "expr": "histogram_quantile(0.95, sum by(testid)(rate(k6_http_req_duration_seconds{scenario=~\"$scenario\", expected_response=\"true\", testid=~\"$testid\"}[$__rate_interval])))",
@@ -3281,7 +3281,7 @@
               {
                 "datasource": {
                   "type": "prometheus",
-                  "uid": "0XhLkoY4z"
+                  "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
                 },
                 "editorMode": "code",
                 "expr": "sum by(scenario) (max(k6_http_reqs_total{testid=~\"$testid\", scenario=~\"$scenario\"}))",
@@ -3294,7 +3294,7 @@
               {
                 "datasource": {
                   "type": "prometheus",
-                  "uid": "0XhLkoY4z"
+                  "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
                 },
                 "editorMode": "code",
                 "expr": "avg by(scenario) (sum(irate(k6_http_reqs_total{testid=~\"$testid\"}[$__rate_interval])))",
@@ -3307,7 +3307,7 @@
               {
                 "datasource": {
                   "type": "prometheus",
-                  "uid": "0XhLkoY4z"
+                  "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
                 },
                 "editorMode": "code",
                 "expr": "sum by(scenario) (k6_iterations_total{testid=~\"$testid\",scenario=~\"$scenario\"})",
@@ -3320,7 +3320,7 @@
               {
                 "datasource": {
                   "type": "prometheus",
-                  "uid": "0XhLkoY4z"
+                  "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
                 },
                 "editorMode": "code",
                 "expr": "sum by(scenario) ( k6_http_reqs_total{testid=~\"$testid\",scenario=~\"$scenario\",expected_response=\"false\"})\n",
@@ -3446,7 +3446,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "description": "",
             "fieldConfig": {
@@ -3725,7 +3725,7 @@
               {
                 "datasource": {
                   "type": "prometheus",
-                  "uid": "0XhLkoY4z"
+                  "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
                 },
                 "editorMode": "builder",
                 "exemplar": false,
@@ -3740,7 +3740,7 @@
               {
                 "datasource": {
                   "type": "prometheus",
-                  "uid": "0XhLkoY4z"
+                  "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
                 },
                 "editorMode": "code",
                 "exemplar": true,
@@ -3756,7 +3756,7 @@
               {
                 "datasource": {
                   "type": "prometheus",
-                  "uid": "0XhLkoY4z"
+                  "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
                 },
                 "editorMode": "code",
                 "exemplar": false,
@@ -3770,7 +3770,7 @@
               {
                 "datasource": {
                   "type": "prometheus",
-                  "uid": "0XhLkoY4z"
+                  "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
                 },
                 "editorMode": "code",
                 "exemplar": false,
@@ -3790,7 +3790,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "0XhLkoY4z"
+              "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
             },
             "refId": "A"
           }
@@ -3836,7 +3836,7 @@
           },
           "datasource": {
             "type": "prometheus",
-            "uid": "0XhLkoY4z"
+            "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
           },
           "definition": "label_values(testid)",
           "hide": 0,
@@ -3862,7 +3862,7 @@
           },
           "datasource": {
             "type": "prometheus",
-            "uid": "0XhLkoY4z"
+            "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
           },
           "definition": "label_values(scenario)",
           "hide": 0,
@@ -3889,7 +3889,7 @@
           },
           "datasource": {
             "type": "prometheus",
-            "uid": "0XhLkoY4z"
+            "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
           },
           "definition": "label_values(url)",
           "hide": 0,
@@ -3910,7 +3910,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "0XhLkoY4z"
+            "uid": "1bbc5246-148a-4b09-a51b-348b05121d19"
           },
           "filters": [],
           "hide": 0,
