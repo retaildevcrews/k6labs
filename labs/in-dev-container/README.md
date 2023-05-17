@@ -1,12 +1,16 @@
-# Local K6 Test Run
+# Run k6 as Docker Container
 
-## Run k6 locally from docker image
+## Goal
 
-First of all let's identify the Test Lifecycle stages for a k6 test file.
+Provide overview of k6 script, and demonstrate running a k6 script as a Docker container instance.
+
+## Background
+
+Let's identify the Test Lifecycle stages for a k6 test file.
 
 - Init
 - Setup
-- VU code
+- VU code *VU stands for Virtual User*
 - Teardown
 
 Load test code snippet
@@ -53,7 +57,7 @@ Now let's take a closer look at the load test file utilized for this example, an
 
 ```bash
 # Open the file
-code baseline-k6.js
+code scripts/baseline-k6.js
 ```
 
 ## Run the ngsa container
