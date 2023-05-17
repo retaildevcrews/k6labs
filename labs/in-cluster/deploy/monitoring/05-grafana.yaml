@@ -21,6 +21,32 @@ data:
         ]
     }
 ---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-dashboard-providers
+  namespace: monitoring
+  labels:
+    app: grafana
+data:
+  dashboardproviders.yaml: |
+    apiVersion: 1
+    providers:
+    - name: k6-dashboard
+      folder: k6
+      options:
+        path: /var/lib/grafana/dashboards/k6-dashboard
+      orgId: 1
+      type: file
+      disableDeletion: false
+    - name: k6-official-dashboard
+      folder: k6
+      options:
+        path: /var/lib/grafana/dashboards/k6-official-dashboard
+      orgId: 1
+      type: file
+      disableDeletion: false
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -77,11 +103,18 @@ spec:
               memory: "1Gi"
               cpu: "500m"
           volumeMounts:
-          - mountPath: /var/lib/grafana
-            name: grafana-pv
-          - mountPath: /etc/grafana/provisioning/datasources
-            name: grafana-datasources
-            readOnly: false
+            - mountPath: /var/lib/grafana
+              name: grafana-pv
+            - mountPath: /etc/grafana/provisioning/datasources
+              name: grafana-datasources
+              readOnly: false
+            - name: grafana-dashboard-providers
+              mountPath: /etc/grafana/provisioning/dashboards/dashboardproviders.yaml
+              subPath: dashboardproviders.yaml
+            - name: k6-dashboard
+              mountPath: /var/lib/grafana/dashboards/k6-dashboard
+            - name: k6-official-dashboard
+              mountPath: /var/lib/grafana/dashboards/k6-official-dashboard
       volumes:
         - name: grafana-pv
           hostPath:
@@ -90,6 +123,15 @@ spec:
           configMap:
               defaultMode: 420
               name: grafana-datasources
+        - name: grafana-dashboard-providers
+          configMap:
+            name: grafana-dashboard-providers
+        - name: k6-dashboard
+          configMap:
+            name: k6-dashboard
+        - name: k6-official-dashboard
+          configMap:
+            name: k6-official-dashboard
 ---
 apiVersion: v1
 kind: Service
