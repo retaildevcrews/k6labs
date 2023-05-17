@@ -60,7 +60,8 @@ NOTE: The [k6 deployment file](labs/in-cluster/deploy/k6.yaml) has already set t
 
 ```bash
 
-#  deploy prometheus and grafana
+#  Deploy prometheus and grafana
+#  This will also create a prometheus datasource for grafana and 2 dashboards for viewing k6 results
 kubectl apply -f deploy/monitoring
 
 # Very that prometheus and grafana pods are up an running
@@ -84,16 +85,6 @@ kubectl wait pods -n monitoring --all --for condition=ready --timeout=180s
     ```
 
 - Access Grafana from browser at  <http://localhost:3000> - *you can log into your local instance of grafana by using the creds admin/admin*
-
-- Import Official k6 Test Result Dashboard:
-    1. Navigate to: <http://localhost:3000/dashboard/import>
-    2. In the id field enter the following id: 18030 and click load button
-    3. Select Prometheus from the prometheus dropdown and click import button
-
-- Import k6 Load Testing Results  Dashboard:
-    1. Navigate to: <http://localhost:3000/dashboard/import>
-    2. In the id field enter the following id: 16543 and click load button
-    3. Select Prometheus from the prometheus dropdown and click import button
 
 ## Deploy k6 from docker image
 
