@@ -123,10 +123,6 @@ kubectl apply -f deploy/k6.yaml
 
 kubectl wait pods -n k6 --all --for condition=ready --timeout=180s
 
-# check k6 logs
-kubectl logs <k6 pod name> -n k6 --tail 20
-```
-
 ## Verify ngsa-memory is receiving requests from k6
 
 Check logs for ngsa-memory pod and locate the "UserAgent" attribute, and verify that looks like this. `UserAgent":"k6/0.44.0 (https://k6.io/)`
