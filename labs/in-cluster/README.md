@@ -2,7 +2,7 @@
 
 ## Goal
 
-This lab demonstrates running k6 wihtin a Kubernetes cluster sending metrics to prometheus and visualizing data in grafana
+This lab demonstrates running k6 within a Kubernetes cluster sending metrics to Prometheus and visualizing data in Grafana
 
 ## Getting Started
 
@@ -69,7 +69,7 @@ kubectl wait pods -n monitoring --all --for condition=ready --timeout=180s
 
 ```
 
-### Open grafana dashboard
+### Open Grafana dashboard
 
 - Enable port-forward from CLI
    > **Note**
@@ -84,15 +84,15 @@ kubectl wait pods -n monitoring --all --for condition=ready --timeout=180s
     kubectl port-forward service/grafana 3000:3000 -n monitoring
     ```
 
-- Access Grafana from browser at  <http://localhost:3000> - *you can log into your local instance of grafana by using the default creds admin/admin*
+- Access Grafana from browser at  <http://localhost:3000> - *you can log into your local instance of Grafana by using the default creds admin/admin*
 
-    🛑 Note: In order to successfully navigate to `localhost` you must **Open Codespaces in VS code desktop**
+    🛑 Note: To successfully navigate to `localhost` you must **Open Codespaces in VS code desktop**
 
 ## Deploy k6 from docker image
 
 We are deploying the [k6 docker image](https://hub.docker.com/r/grafana/k6/), however k6 package can be installed on multiple operating systems such as Linux, Mac, and Windows. [k6 Installation options](https://k6.io/docs/get-started/installation/).
 
-Also, we are storing the load test script into a Configmap so it can accessable when k6 scales up.
+Also, we are storing the load test script into a Configmap so it can accessible when k6 scales up.
 
 ## How to run a test
 

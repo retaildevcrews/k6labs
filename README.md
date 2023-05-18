@@ -6,7 +6,7 @@ This repository takes advantage of GitHub Codespaces to simplify getting started
 
 Deploy a local Cluster using k3d, then shows the user how to run k6 to perform load testing again ngsa-memory and then enable and leverage observability tools.
 
-The final goal of this repository is to provide an environment that helps the user to get familiar with k6 and have a basic undestanding of scripting load test file. The repository contains guided hands-on learning scenarios to familiarize users with k6.
+The final goal of this repository is to provide an environment that helps the user to get familiar with k6 and have a basic understanding of scripting load test file. The repository contains guided hands-on learning scenarios to familiarize users with k6.
 
 ## What is k6?
 
@@ -30,4 +30,4 @@ The easiest way to get started with the labs by opening this repository in CodeS
 | Lab    | Description |
 | -------- | ------- |
 | [Lab 1: Run k6 as docker container](labs/in-dev-container/)| This lab shows how to run k6 by running 2 terminals, one running a docker image for the system under test and the other running docker image for k6 test |
-| [Lab 2: Run k6 within a cluster](labs/in-cluster/)  | This lab shows how to run k6 inside a kubernetest cluster, we will deploy system under test, k6, and observability tooling    |
+| [Lab 2: Run k6 within a cluster](labs/in-cluster/)  | This lab shows how to run k6 inside a Kubernetes cluster, we will deploy system under test, k6, and observability tooling    |
