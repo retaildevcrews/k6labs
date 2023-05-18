@@ -4,7 +4,7 @@ The goal of this repository is to provide examples for using k6 as a load testin
 
 This repository takes advantage of GitHub Codespaces to simplify getting started with the tooling.  Instructions will also be provided on how to set up an environment outside of the dev container if the user chooses to do so.
 
-deploy a local Cluster using k3d, then shows the user how to run k6 to perform load testing again ngsa-memory and then enable and leverage observability tools.
+Deploy a local Cluster using k3d, then shows the user how to run k6 to perform load testing again ngsa-memory and then enable and leverage observability tools.
 
 The final goal of this repository is to provide an environment that helps the user to get familiar with k6 and have a basic undestanding of scripting load test file. The repository contains guided hands-on learning scenarios to familiarize users with k6.
 
