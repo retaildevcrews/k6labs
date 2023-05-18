@@ -44,7 +44,7 @@ More information about Checks can be found [here](https://k6.io/docs/using-k6/ch
 Switch to `/labs/in-dev-container` directory
 
 ```bash
-cd in-dev-container
+cd labs/in-dev-container
 ```
 
 ### Load Test Files
@@ -73,7 +73,7 @@ docker run --net=host ghcr.io/retaildevcrews/ngsa-app:beta --in-memory
 
 ## Run the k6 container
 
-Navigate to the second terminal to run k6
+Navigate to the second terminal to run k6 and switch to `labs/in-dev-container` directory.
 
 For example, we are going to run a 5-second, 2-VU load test. In order to do that we are going to approach it in two different ways
 

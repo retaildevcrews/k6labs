@@ -32,7 +32,7 @@ code scripts/benchmark-k6-cluster.js
 # create cluster, and build/deploy application, the make file used here creates a k3d cluster and deploys ngsa and istio to that cluster
 make all
 
-# check if cluster and application is deployed
+# after short while, check if cluster and application is deployed 
 make check
 ```
 
@@ -84,7 +84,9 @@ kubectl wait pods -n monitoring --all --for condition=ready --timeout=180s
     kubectl port-forward service/grafana 3000:3000 -n monitoring
     ```
 
-- Access Grafana from browser at  <http://localhost:3000> - *you can log into your local instance of grafana by using the creds admin/admin*
+- Access Grafana from browser at  <http://localhost:3000> - *you can log into your local instance of grafana by using the default creds admin/admin*
+
+    🛑 Note: In order to successfully navigate to `localhost` you must **Open Codespaces in VS code desktop**
 
 ## Deploy k6 from docker image
 
