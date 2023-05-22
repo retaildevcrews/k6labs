@@ -71,22 +71,9 @@ kubectl wait pods -n monitoring --all --for condition=ready --timeout=180s
 
 ### Open Grafana dashboard
 
-- Enable port-forward from CLI
-   > **Note**
-   > Each port forward below needs to be run from its own termina/shell
-   > k3d --version
+🛑 Note: To successfully navigate to `localhost` you must **Open Codespaces in VS code desktop**
 
-    ```bash
-    kubectl port-forward service/prometheus-service 9090:8080 -n monitoring
-    ```
-
-    ```bash
-    kubectl port-forward service/grafana 3000:3000 -n monitoring
-    ```
-
-- Access Grafana from browser at  <http://localhost:3000> - *you can log into your local instance of Grafana by using the default creds admin/admin*
-
-    🛑 Note: To successfully navigate to `localhost` you must **Open Codespaces in VS code desktop**
+Access Grafana from browser at  <http://localhost:32000> - *you can log into your local instance of Grafana by using the default creds admin/admin*
 
 ## Deploy k6 from docker image
 
@@ -122,7 +109,6 @@ Check logs for ngsa-memory pod and locate the "UserAgent" attribute, and verify 
 
 ```bash
 
-kubectl get pods -n ngsa
 # check ngsa logs
-kubectl logs <ngsa-memory pod name> -n ngsa --tail 20
+kubectl logs -l "app=ngsa-memory" -n ngsa --tail 10
 ```
