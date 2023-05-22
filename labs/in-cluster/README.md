@@ -43,7 +43,7 @@ make check
 kubectl wait pods -n ngsa --all --for condition=ready --timeout=180s
 
 # check ngsa logs
-kubectl logs <ngsa-memory pod name> -n ngsa --tail 10
+kubectl logs -l "app=ngsa-memory" -n ngsa --tail 10
 ```
 
 ## Setup Monitoring
