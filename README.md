@@ -29,5 +29,5 @@ The easiest way to get started with the labs by opening this repository in CodeS
 
 | Lab    | Description |
 | -------- | ------- |
-| [Lab 1: Run k6 as docker container](labs/in-dev-container/)| This lab shows how to run k6 by running 2 terminals, one running a docker image for the system under test and the other running docker image for k6 test |
-| [Lab 2: Run k6 within a cluster](labs/in-cluster/)  | This lab shows how to run k6 inside a Kubernetes cluster, we will deploy system under test, k6, and observability tooling    |
+| [Lab 1: Run k6 as docker container](labs/in-dev-container/README.md)| This lab shows how to run k6 by running 2 terminals, one running a docker image for the system under test and the other running docker image for k6 test |
+| [Lab 2: Run k6 within a cluster](labs/in-cluster/README.md)  | This lab shows how to run k6 inside a Kubernetes cluster, we will deploy system under test, k6, and observability tooling    |
