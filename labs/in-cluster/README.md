@@ -54,7 +54,7 @@ The k6 has an experimental feature name [Prometheus remote write](https://k6.io/
 
 ![Prometheus remote write configuration](images/k6-prometheus-remote-write.png)
 
-NOTE: The [k6 deployment file](labs/in-cluster/deploy/k6.yaml) has already set this configuration.
+NOTE: The [k6 deployment file](deploy/k6.yaml) has already set this configuration.
 
 ### Install Grafana and Prometheus
 
