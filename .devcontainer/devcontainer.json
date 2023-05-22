@@ -43,7 +43,7 @@
 		30000,
 		30080,
 		32000,
-		33000
+		32100
 	],
 
 	
@@ -53,7 +53,7 @@
 		"30000": { "label": "Istio IngressGateway LoadBalancer NodePort" },
 		"30080": { "label": "Ngsa NodePort" },
 		"32000": { "label": "Grafana NodePort" },
-		"33000": { "label": "Prometheus Server NodePort" }
+		"32100": { "label": "Prometheus Server NodePort" }
 	},
 
 	// Added for local developement

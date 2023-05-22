@@ -266,4 +266,4 @@ spec:
   ports:
     - port: 8080
       targetPort: 9090
-      nodePort: 330000
+      nodePort: 32100

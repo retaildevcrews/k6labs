@@ -10,7 +10,7 @@ ports:
 - port: 32000:32000 # Grafana NodePort
   nodeFilters:
   - server:0
-- port: 33000:33000 # Prometheus NodePort
+- port: 32100:32100 # Prometheus NodePort
   nodeFilters:
   - server:0  
 - port: 30080:30080 # Ngsa NodePort

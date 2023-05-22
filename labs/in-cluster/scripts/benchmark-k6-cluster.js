@@ -19,7 +19,7 @@ export default function () {
     let maxSleep=0;
     let res
     // let baseURL='http://ngsa-memory.ngsa.svc.cluster.local:8080';
-    let baseURL= `http://${__ENV.MY_HOSTNAME}`;
+    let baseURL= `http://${__ENV.TARGET_HOSTNAME}`;
 
     //Request #1
     res=http.del(baseURL+'/api/movies/zz0133093');

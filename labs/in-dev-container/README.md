@@ -87,10 +87,10 @@ More information about running k6 can be found [here](https://k6.io/docs/get-sta
 curl -I localhost:8080/version
 
 # Option 1: Run k6 with default options for VUs and duration
-docker run --rm -v $(pwd)/scripts:/scripts --net=host grafana/k6 run -e MY_HOSTNAME=localhost:8080 /scripts/baseline-k6.js
+docker run --rm -v $(pwd)/scripts:/scripts --net=host grafana/k6 run -e TARGET_HOSTNAME=localhost:8080 /scripts/baseline-k6.js
 
 # Option 2: Run k6 with arguments. overwrite VUs and duration by setting those arguments in-line
-docker run --rm -v $(pwd)/scripts:/scripts --net=host grafana/k6 run --vus 2 --duration 5s -e MY_HOSTNAME=localhost:8080 /scripts/baseline-k6.js
+docker run --rm -v $(pwd)/scripts:/scripts --net=host grafana/k6 run --vus 2 --duration 5s -e TARGET_HOSTNAME=localhost:8080 /scripts/baseline-k6.js
 ```
 
 ## Review Summary Report

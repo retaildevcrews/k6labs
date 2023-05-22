@@ -27,7 +27,7 @@
  
      let maxSleep=0;
      let res
-     let baseURL= `http://${__ENV.MY_HOSTNAME}`;
+     let baseURL= `http://${__ENV.TARGET_HOSTNAME}`;
  
      //Request #1
      res=http.get(baseURL+'/version');
