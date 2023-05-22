@@ -34,10 +34,6 @@ spec:
                 - ALL
             runAsNonRoot: true
             runAsUser: 10001
-          ports:
-            - name: http
-              containerPort: 8080
-              protocol: TCP
           resources:
             limits:
               memory: 1Gi
@@ -65,19 +61,4 @@ spec:
       securityContext:
         seccompProfile:
           type: RuntimeDefault
----
 
-apiVersion: v1
-kind: Service
-metadata:
-  name: k6
-  namespace: k6
-spec:
-  type: ClusterIP
-  ports:
-    - port: 8080
-      targetPort: http
-      protocol: TCP
-      name: http
-  selector:
-    app: k6
