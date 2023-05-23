@@ -1,5 +1,6 @@
 {
 	"name": "k6labs",
+	"dockerFile": "Dockerfile",
 	"runArgs": [ "--init", "--privileged" ],
 	"overrideCommand": false,
 	"features": {
@@ -23,10 +24,41 @@
 			"extensions": [
 				"ms-azuretools.vscode-docker",
 				"ms-azuretools.vscode-bicep",
-				"ms-python.python"
-			],
+				"ms-python.python",
+				"eamodio.gitlens",
+				"davidanson.vscode-markdownlint",
+				"gruntfuggly.todo-tree",
+				"ms-kubernetes-tools.vscode-kubernetes-tools",
+				"visualstudioexptteam.vscodeintellicode"
+			]
 		}
 	},
+	"hostRequirements": {
+		"cpus": 4
+	},
+
+  // Forwarded ports
+	"forwardPorts": [
+		8080,
+		30000,
+		30080,
+		32000,
+		32100
+	],
+
+	
+
+	// Port Labels
+	"portsAttributes": {
+		"30000": { "label": "Istio IngressGateway LoadBalancer NodePort" },
+		"30080": { "label": "Ngsa NodePort" },
+		"32000": { "label": "Grafana NodePort" },
+		"32100": { "label": "Prometheus Server NodePort" }
+	},
+
+	// Added for local developement
+	  // Without this port forwarding to Windows Network sometime fails
+	  "appPort": [8080],
 
     "onCreateCommand": "/bin/bash ./.devcontainer/on-create.sh"
 }

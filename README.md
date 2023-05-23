@@ -1,33 +1,33 @@
-# K6Labs
+# k6 Labs Overview
 
-This repository contains documentation and tools for working with K6 Load Testing tool.
-The repo also is set up as a codespace that includes tooling for running K6 tests.
+The goal of this repository is to provide examples for using k6 as a load testing tool in order to validate performance of Kubernetes Hosted applications.
 
-## LodeRunner(WebV) 2 K6 Converter
+This repository takes advantage of GitHub Codespaces to simplify getting started with the tooling.  Instructions will also be provided on how to set up an environment outside of the dev container if the user chooses to do so.
 
-Included in this repo is a tool for generating K6 scripts from existing LodeRunner/WebV test files.
+Deploy a local Cluster using k3d, then shows the user how to run k6 to perform load testing again ngsa-memory and then enable and leverage observability tools.
 
-To run:
+The final goal of this repository is to provide an environment that helps the user to get familiar with k6 and have a basic understanding of scripting load test file. The repository contains guided hands-on learning scenarios to familiarize users with k6.
 
-```bash
-python python/lr2k6.py -j scripts/baseline.json --sleep 5 > scripts/baseline-k6.js
+## What is k6?
 
-# To see list of options
-python python/lr2k6.py --help
-```
+Grafana k6 is an open-source load testing tool that makes performance testing easy and productive for engineering teams. k6 is free, developer-centric, and extensible.
 
-## Running a K6 Test locally
+Using k6, you can test the reliability and performance of your systems and catch performance regressions and problems earlier, k6 will help you to build resilient and performant applications that scale, one of the most k6 powerful feature is that it's a load testing tool scriptable in JavaScript. More documentation can be found [here](https://k6.io/docs/).
 
-For more in depth usage instruction see: <https://k6.io/docs/get-started/running-k6/>
+## Use cases
 
-``` bash
-# run a test with 1 user and 1 iteration
-k6 run --vus 1 --iterations 1 scripts/baseline-k6.js
+The most common case is to use k6 for testing the performance and reliability of APIs, microservices, and websites. More information can be found [here](https://k6.io/docs/#use-cases)
 
-# run a test with 10 users for 5 minutes
-k6 run --vus 1 --duration 3m scripts/baseline-k6.js
+## The Labs
 
-# to output time series data to a json file use the --out argument
-k6 run --vus 1 --iterations 1 scripts/baseline-k6.js \
---out json=output-log.json
-```
+The easiest way to get started with the labs by opening this repository in CodeSpaces
+
+- Click the Code button
+- Click the Codespaces tab
+- Click the "Create codespace on main" button
+- Choose the `8 core` option, however if you are planning to scale up k6 you should choose `16 core` machine type.
+
+| Lab    | Description |
+| -------- | ------- |
+| [Lab 1: Run k6 as docker container](labs/in-dev-container/README.md)| This lab shows how to run k6 by running 2 terminals, one running a docker image for the system under test and the other running docker image for k6 test |
+| [Lab 2: Run k6 within a cluster](labs/in-cluster/README.md)  | This lab shows how to run k6 inside a Kubernetes cluster, we will deploy system under test, k6, and observability tooling    |
