@@ -2,7 +2,13 @@
 
 ## Goal
 
-This lab demonstrates running k6 within a Kubernetes cluster sending metrics to Prometheus and visualizing data in Grafana
+This lab demonstrates the foundational implementation for conducting massive-scale load test, as it enables running k6 within a Kubernetes cluster sending metrics to Prometheus and visualizing data in Grafana.
+
+## Use Case
+
+Our implementation outlines the specific configuration and preparations we have undertaken to handle millions of requests per second. Understanding this implementation is crucial for demonstrating the practical application and benefits of the Solution.
+
+- [Implementation](./implementation.md)
 
 ## Getting Started
 
